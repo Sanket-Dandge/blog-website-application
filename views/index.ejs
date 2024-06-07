@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+<h2 class="topic">Blogs</h2>
+
+<% if (blogList.length === 0) { %>
+  <form class="" action="/new" method="GET">
+    <button class="homepage-btn create-new-btn" type="submit">Create New</button>
+  </form>
+<% } else { %>
+  <% for(let i = 0; i < blogList.length; i++) { %>
+  <div class="blog-container">
+    <h2 class="blog-heading"><%=   blogList[i].heading %></h2>
+    <h5 class="author-name"> - <%=   blogList[i].author %></h5>
+    <p class="blog-content"><%=   blogList[i].summary %></p>
+    <div class="button-container">
+      <form class="homepage-form" action="/edit/<%= blogList[i].id %>" method="GET">
+        <button class="homepage-btn" type="submit">Edit</button>
+      </form>
+      <form class="homepage-form" action="/delete/<%=blogList[i].id %>" method="POST">
+        <button class="homepage-btn" type="submit">Delete</button>
+      </form>
+      <form class="homepage-form" action="/blog/<%=blogList[i].id %>" method="GET">
+        <button class="homepage-btn" type="submit">Read More</button>
+      </form>
+    </div>
+  </div>
+  <% } %>
+<% } %>
+
+<%- include("partials/footer.ejs") %>

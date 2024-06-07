@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+
+<h2 class="topic">New Post</h2>
+
+<form action="/submit" method="POST">
+  <input type="hidden" name="formType" value="form2">
+  <label> Blog Heading </label>
+  <input class="contact-input" name="blogHeading" type="text" />
+  <label> Author </label>
+  <input class="contact-input" name="author" type="text" />
+  <label> Content </label>
+  <textarea class="contact-input" name="content"> </textarea>
+  <input type="submit" value="Submit" />
+</form>
+
+<%- include("partials/footer.ejs") %>

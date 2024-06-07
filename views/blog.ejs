@@ -1,0 +1,10 @@
+<%- include("partials/header.ejs") %>
+
+<div class="blog-container">
+<h2 class="topic topic-extended"><%= locals.blogToRead["heading"] %></h2>
+<h5>Author: <%= locals.blogToRead["author"] %></h5>
+<hr>
+<p class="blog-para"><%- blogToRead.content.replace(/\n/g, '<br>') %></p>
+</div>
+
+<%- include("partials/footer.ejs") %>

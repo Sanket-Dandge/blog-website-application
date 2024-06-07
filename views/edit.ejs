@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+
+<h2 class="topic">Edit Blog</h2>
+
+<form action="/edit/<%= blogToEdit.id %>" method="POST">
+  <label> Blog Heading </label>
+  <input class="contact-input" name="blogHeading" type="text" value="<%= blogToEdit.heading %>" required />
+  <label> Author </label>
+  <input class="contact-input" name="author" type="text" value="<%= blogToEdit.author %>" required />
+  <label> Content </label>
+  <textarea class="contact-input" name="content"> <%= blogToEdit.content %> </textarea>
+  <input type="submit" value="Save Changes" />
+</form>
+
+<%- include("partials/footer.ejs") %>
+
