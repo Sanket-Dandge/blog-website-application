@@ -236,10 +236,6 @@ label {
   text-overflow: ellipsis;
 }
 
-.blog-container h2 {
-  margin: 0;
-}
-
 .homepage-form {
   display: inline;
 }
@@ -250,13 +246,30 @@ label {
   cursor: pointer;
 }
 
+.blog-heading {
+  margin-top: 3px;
+  padding-top: 3px;
+}
+
+.edit-btn {
+  background-color: green;
+}
+
+.delete-btn {
+  background-color: red;
+}
+
+.read-more-btn {
+  background-color: #f7f;
+}
+
 .button-container {
   justify-content: right;
 }
 
 .author-name {
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .create-new-btn {
@@ -265,8 +278,21 @@ label {
   position: absolute;
   top: 40%;
   right: 43.5%;
+  background-color: #f8f;
 } 
 
+.blog-content {
+  font-size: 1.2rem;
+}
+
+.blog-present-create-btn {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: #f8f;
+}
+
+/* ----------------------------- Blog Page -------------------------------- */
 
 
 .blog-para {

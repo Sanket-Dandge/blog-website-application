@@ -7,6 +7,7 @@ var heading = "";
 var author = "";
 var content = "";
 var summary = "";
+var made_time = new Date();
 
 var blogList = [];
 let blogID = 0;
@@ -48,7 +49,7 @@ app.post("/submit", (req, res) => {
       author = req.body["author"];
       content = req.body["content"];
       summary = content.length > 300 ? content.substring(0, 100) + '...' : content;
-      blogList.push({id: blogID++, heading, author, content, summary});
+      blogList.push({id: blogID++, heading, made_time, author, content, summary});
       console.log(blogList);
       res.redirect("/");
     default:
@@ -69,6 +70,7 @@ app.post("/edit/:id", (req, res) => {
   if (blogIndex !== -1) {
     blogList[blogIndex] = {
       id: parseInt(blogId),
+      made_time: new Date(),
       heading: req.body["blogHeading"],
       author: req.body["author"],
       content: newContent,

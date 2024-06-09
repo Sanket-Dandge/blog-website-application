@@ -7,20 +7,24 @@
     <button class="homepage-btn create-new-btn" type="submit">Create New</button>
   </form>
 <% } else { %>
+  <form class="" action="/new" method="GET">
+    <button class="homepage-btn blog-present-create-btn" type="submit">Create New</button>
+  </form>
   <% for(let i = 0; i < blogList.length; i++) { %>
   <div class="blog-container">
-    <h2 class="blog-heading"><%=   blogList[i].heading %></h2>
-    <h5 class="author-name"> - <%=   blogList[i].author %></h5>
+    <h1 class="blog-heading"><%=   blogList[i].heading %></h1>
+    <p> <%= blogList[i].made_time %> </p>
     <p class="blog-content"><%=   blogList[i].summary %></p>
+    <p class="author-name"> By: <%=   blogList[i].author %></p>
     <div class="button-container">
       <form class="homepage-form" action="/edit/<%= blogList[i].id %>" method="GET">
-        <button class="homepage-btn" type="submit">Edit</button>
+        <button class="homepage-btn edit-btn" type="submit">Edit</button>
       </form>
       <form class="homepage-form" action="/delete/<%=blogList[i].id %>" method="POST">
-        <button class="homepage-btn" type="submit">Delete</button>
+        <button class="homepage-btn delete-btn" type="submit">Delete</button>
       </form>
       <form class="homepage-form" action="/blog/<%=blogList[i].id %>" method="GET">
-        <button class="homepage-btn" type="submit">Read More</button>
+        <button class="homepage-btn read-more-btn" type="submit">Read More</button>
       </form>
     </div>
   </div>
